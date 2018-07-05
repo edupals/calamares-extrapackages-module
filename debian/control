@@ -1,0 +1,14 @@
+Source: calamares-extrapackages
+Section: devel
+Priority: important
+Maintainer: Equipo LliureX <lliurex@gva.es> 
+Build-Depends: debhelper (>= 10)
+Standards-Version: 4.1.2
+Homepage: http://lliurex.net
+#Vcs-Git: https://gitlab.com/gaticos/calamares-extrapackages-module.git
+
+Package: calamares-extrapackages
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, calamares
+Description: Calamares module to install extrapackages selected by users 
+  Users can select packages on install mode
