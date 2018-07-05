@@ -217,7 +217,7 @@ class ExtraPackagesViewStep:
         return list_packages
 
     def prettyName(self):
-        return _("Dummy PythonQt ViewStep")
+        return _("Extra packages")
 
     def isNextEnabled(self):
         return True  # The "Next" button should be clickable
@@ -248,7 +248,7 @@ class ExtraPackagesViewStep:
 
     def jobs(self):
         # Returns a list of objects that implement Calamares::Job.
-        return [DummyPQJob("Dummy PythonQt job reporting for duty")]
+        return []
 
     def widget(self):
         # Returns the base QWidget of this module's UI.
@@ -281,7 +281,7 @@ class ExtraPackagesViewStep:
         # First we load the catalog file for the new language...
         try:
             global _
-            _t = gettext.translation('dummypythonqt',
+            _t = gettext.translation('extrapackages',
                                      localedir=os.path.join(_path, 'lang'),
                                      languages=[locale_name])
             _ = _t.gettext
@@ -289,32 +289,3 @@ class ExtraPackagesViewStep:
             calamares.utils.debug(e)
             pass
 
-        # ... and then we can call setText(_("foo")) and similar methods on
-        # the relevant widgets here to reapply the strings.
-
-# An example Job class. Implements Calamares::Job. For method identifiers, the
-# same rules apply as for ViewStep. No decorators are necessary here, because
-# only the ViewStep implementation is the unique entry point, and a module can
-# have any number of jobs.
-
-
-class DummyPQJob:
-    def __init__(self, my_msg):
-        self.my_msg = my_msg
-
-    def pretty_name(self):
-        return _("The Dummy PythonQt Job")
-
-    def pretty_description(self):
-        return _("This is the Dummy PythonQt Job. "
-                 "The dummy job says: {}").format(self.my_msg)
-
-    def pretty_status_message(self):
-        return _("A status message for Dummy PythonQt Job.")
-
-    def exec(self):
-        # As an example, we touch a file in the target root filesystem.
-        rmp = calamares.global_storage['rootMountPoint']
-        os.system("touch {}/calamares_dpqt_was_here".format(rmp))
-        calamares.utils.debug("the dummy job says {}".format(self.my_msg))
-        return {'ok': True}
