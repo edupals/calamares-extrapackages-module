@@ -1,3 +1,9 @@
+calamares-extrapackages (0.1.1) bionic; urgency=medium
+
+  * Change priority on control file
+
+ -- Raul Rodrigo Segura <raurodse@gmail.com>  Tue, 02 Apr 2019 13:06:40 +0200
+
 calamares-extrapackages (0.1) bionic; urgency=high
 
   * First bionic version 

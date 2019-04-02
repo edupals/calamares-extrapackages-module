@@ -1,6 +1,6 @@
 Source: calamares-extrapackages
 Section: devel
-Priority: important
+Priority: optional
 Maintainer: Equipo LliureX <lliurex@gva.es> 
 Build-Depends: debhelper (>= 10)
 Standards-Version: 4.1.2
