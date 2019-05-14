@@ -89,7 +89,7 @@ class ExtraPackagesViewStep:
 
     def createImagePackage(self,config):
         is_img = True
-        if imghdr.what(config['image']) == '':
+        if not os.path.exists(config['image']) or imghdr.what(config['image']) == '':
             is_img = False
         if is_img:
             label = QLabel()
