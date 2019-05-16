@@ -88,17 +88,10 @@ class ExtraPackagesViewStep:
 
 
     def createImagePackage(self,config):
-        is_img = True
-        if not os.path.exists(config['image']) or imghdr.what(config['image']) == '':
-            is_img = False
-        if is_img:
-            label = QLabel()
-            label.setText("")
-            label.setScaledContents(True)
-            label.setPixmap(QPixmap(config['image']))
-        else:
-            label = QSvgWidget()
-            label.load(config['image'])
+        label = QLabel()
+        label.setText("")
+        label.setScaledContents(True)
+        label.setPixmap(QIcon.fromTheme(config['image']).pixmap(40,40))
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
