@@ -5,9 +5,6 @@
 #
 #   GPLv3
 
-import platform
-import imghdr
-
 from PythonQt.QtGui import *
 from PythonQt.QtCore import *
 from PythonQt.QtSvg import QSvgWidget
